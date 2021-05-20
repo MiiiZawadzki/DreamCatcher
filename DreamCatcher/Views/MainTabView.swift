@@ -13,8 +13,7 @@ struct MainTabView: View {
                     Label("Add", systemImage: "plus.app")
                 }
             
-            Text("Second View")
-                .padding()
+            BrowseView()
                 .tabItem {
                     Label("Browse", systemImage: "bookmark")
                 }
