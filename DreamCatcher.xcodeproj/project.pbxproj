@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F0070C1D2656469700626EFB /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0070C1C2656469700626EFB /* BrowseView.swift */; };
+		F0070C1F265651A600626EFB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0070C1E265651A600626EFB /* SettingsView.swift */; };
 		F037825E2638478300779801 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F037825D2638478300779801 /* HomeView.swift */; };
 		F0623FCB2637554F007C068A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623FCA2637554F007C068A /* MainTabView.swift */; };
 		F09AFE2226281A95002F111D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AFE2126281A95002F111D /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		F0070C1C2656469700626EFB /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		F0070C1E265651A600626EFB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F037825D2638478300779801 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0623FCA2637554F007C068A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F09AFE1E26281A95002F111D /* DreamCatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamCatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				F0623FCA2637554F007C068A /* MainTabView.swift */,
 				F037825D2638478300779801 /* HomeView.swift */,
 				F0070C1C2656469700626EFB /* BrowseView.swift */,
+				F0070C1E265651A600626EFB /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09AFE2226281A95002F111D /* AppDelegate.swift in Sources */,
+				F0070C1F265651A600626EFB /* SettingsView.swift in Sources */,
 				F0F3E76A262DD2E800A9C085 /* RegisterView.swift in Sources */,
 				F0070C1D2656469700626EFB /* BrowseView.swift in Sources */,
 				F09AFE2426281A95002F111D /* SceneDelegate.swift in Sources */,

@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+  @State var showSettings = false
     var body: some View {
         VStack {
             HStack {
                 Text("Hello, Username!")
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+              Button(action: {
+                showSettings.toggle()
+              }, label: {
                     Image(systemName: "gearshape")
                 })
             }
@@ -28,7 +31,9 @@ struct HomeView: View {
             Text("Total dreams saved: 32")
             Spacer()
             
-        }
+        }.sheet(isPresented: $showSettings, content: {
+          SettingsView()
+        })
         
     }
 }
