@@ -7,8 +7,7 @@ struct MainTabView: View {
         .tabItem {
           Label("Home", systemImage: "house")
         }
-      Text("Second View")
-        .padding()
+      AddDreamView()
         .tabItem {
           Label("Add", systemImage: "plus.app")
         }

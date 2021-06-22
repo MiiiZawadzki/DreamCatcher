@@ -25,8 +25,10 @@ struct HomeView: View {
       
       Spacer()
       Text("Yours last saved dream:")
-      Dream()
-        .frame(minWidth: UIScreen.screenWidth, maxWidth: UIScreen.screenWidth, minHeight:UIScreen.screenHeight/3, maxHeight: UIScreen.screenHeight/2, alignment: .center)
+      
+      Dream(titleText: "The strange and vivid dreams of COVID-19", bodyText: "First, my daughter drowned in our backyard pool. Then, I was walking down the aisle toward a man who wasn’t my husband. There were frogs everywhere. Since then, I’ve fallen, I’ve flown and I have swum and run tirelessly. Most recently, I walked outside without my contacts and a stranger threw a bag over my head and wrestled me to the ground—that was after my doe-eyed dog was accused of murdering a man. I try desperately to scream for help, but I am always mute. First, my daughter drowned in our backyard pool. Then, I was walking down the aisle toward a man who wasn’t my husband. There were frogs everywhere. Since then, I’ve fallen, I’ve flown and I have swum and run tirelessly. Most recently, I walked outside without my contacts and a stranger threw a bag over my head and wrestled me to the ground—that was after my doe-eyed dog was accused of murdering a man. I try desperately to scream for help, but I am always mute.")
+        .padding()
+        //.frame(minWidth: UIScreen.screenWidth, maxWidth: UIScreen.screenWidth, minHeight:50, maxHeight: UIScreen.screenHeight/2, alignment: .center)
       Spacer()
       Text("Total dreams saved: 32")
       Spacer()
@@ -41,27 +43,5 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
     HomeView()
-  }
-}
-
-struct Dream: View {
-  var body: some View {
-    ZStack{
-      Rectangle()
-      Color(.blue)
-      VStack{
-        Text("Title of really interesting dream dream dream dream dream")
-          //                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .leading)
-          .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-        Text("Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream Body of dream")
-          //                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-          .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-      }
-      
-    }
-    .cornerRadius(10)
-    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-    //.frame(minWidth: UIScreen.screenWidth, maxWidth: UIScreen.screenWidth, minHeight:50, maxHeight: UIScreen.screenHeight/3, alignment: .center)
-    
   }
 }
