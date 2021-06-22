@@ -25,6 +25,12 @@ struct AddDreamView: View {
           Divider()
             .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
         }
+        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+          Text("Add")
+        })
+        .padding()
+        .foregroundColor(.white)
+        .background(Color(.blue))
       }
     }
 }

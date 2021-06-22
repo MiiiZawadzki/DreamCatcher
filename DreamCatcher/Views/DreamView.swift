@@ -13,11 +13,13 @@ struct Dream: View {
   var body: some View {
     VStack{
       HStack{
+      Text("12-12-2020")
+        .padding()
       Spacer()
       Button(action: {
         
       }, label: {
-        Image(systemName: "minus.circle")
+        Image(systemName: "xmark.circle")
           .resizable()
           .frame(width: 32, height: 32, alignment: .center)
           .foregroundColor(.black)

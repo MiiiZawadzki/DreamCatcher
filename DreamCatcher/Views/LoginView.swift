@@ -2,6 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
   @State var showRegister = false
+  @State var showHome = false
   var body: some View {
     ZStack {
       Circle()
@@ -31,7 +32,9 @@ struct LoginView: View {
           
         }
         Spacer()
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {
+          showHome.toggle()
+        }, label: {
           Text("Sign In")
         })
         .padding()
@@ -75,6 +78,9 @@ struct LoginView: View {
       
     }.fullScreenCover(isPresented: $showRegister, content: {
       RegisterView()
+    })
+    .fullScreenCover(isPresented: $showHome, content: {
+      MainTabView()
     })
     
   }
