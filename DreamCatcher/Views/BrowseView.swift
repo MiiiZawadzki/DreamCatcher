@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BrowseView: View {
   @ObservedObject var dreamListVM = Singleton.shared
-  let dreams = testDreams
   var body: some View {
     List(dreamListVM.dreamCellViewModels, id: \.id){ dream in
       HStack{

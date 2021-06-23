@@ -28,8 +28,8 @@ struct AddDreamView: View {
             .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
         }
         Button(action: {
-          let dream = DreamModel(id: String(Singleton.shared.dreamCellViewModels.count+1), title: titleText, content: contentText, date: Date())
-          Singleton.shared.addDream(dream: dream)
+          let dream = DreamModel(title: titleText, content: contentText, date: Date())
+          Singleton.shared.dreamRepo.addDream(dream)
           
         }, label: {
           Text("Add")

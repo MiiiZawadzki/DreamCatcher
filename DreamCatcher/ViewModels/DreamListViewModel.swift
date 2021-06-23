@@ -10,18 +10,18 @@ import Combine
 
 class DreamListViewModel: ObservableObject{
   @Published var dreamCellViewModels = [DreamCellViewModel]()
+  @Published var dreamRepo = DreamRepository()
   
   private var cancellables = Set<AnyCancellable>()
   
   init() {
-    self.dreamCellViewModels = testDreams.map({ dream in
-      DreamCellViewModel(dream: dream)
-    })
-  }
-  
-  func addDream(dream: DreamModel) {
-    let dreamVM = DreamCellViewModel(dream: dream)
-    self.dreamCellViewModels.append(dreamVM)
+    dreamRepo.$dreams.map { dreams in
+      dreams.map { dream in
+        DreamCellViewModel(dream: dream)
+      }
+    }
+    .assign(to: \.dreamCellViewModels, on: self)
+    .store(in: &cancellables)
   }
   
 }
@@ -29,7 +29,6 @@ class DreamListViewModel: ObservableObject{
 class Singleton {
   static let shared: DreamListViewModel = {
     let instance = DreamListViewModel()
-    // Setup code
     return instance
   }()
 }

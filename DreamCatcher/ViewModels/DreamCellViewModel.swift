@@ -18,10 +18,11 @@ class DreamCellViewModel: ObservableObject, Identifiable{
   init(dream: DreamModel) {
     self.dream = dream
     
-    $dream.map { dream in
+    $dream.compactMap { dream in
       dream.id
     }
     .assign(to: \.id, on: self)
     .store(in: &cancellables)
   }
 }
+
