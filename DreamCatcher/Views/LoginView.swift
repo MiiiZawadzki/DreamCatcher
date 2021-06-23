@@ -3,6 +3,8 @@ import SwiftUI
 struct LoginView: View {
   @State var showRegister = false
   @State var showHome = false
+  @State var emailText:String = ""
+  @State var passwordText: String = ""
   var body: some View {
     ZStack {
       Circle()
@@ -15,8 +17,8 @@ struct LoginView: View {
           .resizable()
           .frame(width: UIScreen.screenWidth/2, height: UIScreen.screenWidth/2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         Spacer()
-        Field(fieldPlaceholder: "Email")
-        Field(fieldPlaceholder: "Password")
+        Field(fieldPlaceholder: "Email", fieldText: $emailText)
+        Field(fieldPlaceholder: "Password", fieldText: $passwordText)
         Spacer()
         HStack{
           Text("Log In with:")
@@ -94,9 +96,10 @@ struct LoginView_Previews: PreviewProvider {
 }
 struct Field: View{
   @State var fieldPlaceholder: String
+  @Binding var fieldText: String
   var body: some View {
     VStack{
-      TextField(fieldPlaceholder, text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+      TextField(fieldPlaceholder, text: $fieldText)
         .frame(width: .none, height: 30)
         .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
       Divider()

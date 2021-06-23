@@ -8,24 +8,30 @@
 import SwiftUI
 
 struct AddDreamView: View {
-  @State private var text:String = "Content"
+  @ObservedObject var dreamListVM = Singleton.shared
+  @State private var contentText:String = "Content"
+  @State private var titleText:String = ""
     var body: some View {
       VStack{
-        Field(fieldPlaceholder: "Title")
+        Field(fieldPlaceholder: "Title", fieldText: $titleText)
         VStack{
-          TextEditor(text: $text)
+          TextEditor(text: $contentText)
             .frame(width: .none, height: 200)
             .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
             .onTapGesture {
-              if self.text == "Content" {
-                self.text = ""
+              if self.contentText == "Content" {
+                self.contentText = ""
               }
             }
-            .foregroundColor(self.text == "Content" ? .gray : .primary)
+            .foregroundColor(self.contentText == "Content" ? .gray : .primary)
           Divider()
             .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
         }
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+        Button(action: {
+          let dream = DreamModel(id: String(Singleton.shared.dreamCellViewModels.count+1), title: titleText, content: contentText, date: Date())
+          Singleton.shared.addDream(dream: dream)
+          
+        }, label: {
           Text("Add")
         })
         .padding()

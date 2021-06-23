@@ -10,10 +10,11 @@ import SwiftUI
 struct Dream: View {
   @State var titleText: String
   @State var bodyText: String
+  @State var date: Date
   var body: some View {
     VStack{
       HStack{
-      Text("12-12-2020")
+        Text(date, style: .date)
         .padding()
       Spacer()
       Button(action: {
@@ -42,6 +43,6 @@ struct Dream: View {
 
 struct Dream_Previews: PreviewProvider {
   static var previews: some View {
-    Dream(titleText: "The strange and vivid dreams of COVID-19", bodyText: "First, my daughter drowned in our backyard pool. Then, I was walking down the aisle toward a man who wasn’t my husband. There were frogs everywhere. Since then, I’ve fallen, I’ve flown and I have swum and run tirelessly. Most recently, I walked outside without my contacts and a stranger threw a bag over my head and wrestled me to the ground—that was after my doe-eyed dog was accused of murdering a man. I try desperately to scream for help, but I am always mute.")
+    Dream(titleText: "The strange and vivid dreams of COVID-19", bodyText: "First, my daughter drowned in our backyard pool. Then, I was walking down the aisle toward a man who wasn’t my husband. There were frogs everywhere. Since then, I’ve fallen, I’ve flown and I have swum and run tirelessly. Most recently, I walked outside without my contacts and a stranger threw a bag over my head and wrestled me to the ground—that was after my doe-eyed dog was accused of murdering a man. I try desperately to scream for help, but I am always mute.",date: Date())
   }
 }
