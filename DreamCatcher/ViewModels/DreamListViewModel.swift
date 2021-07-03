@@ -10,6 +10,7 @@ import Combine
 
 class DreamListViewModel: ObservableObject{
   @Published var dreamCellViewModels = [DreamCellViewModel]()
+  @Published var newestDreamViewModel = [DreamCellViewModel]()
   @Published var dreamRepo = DreamRepository()
   
   private var cancellables = Set<AnyCancellable>()
@@ -21,6 +22,15 @@ class DreamListViewModel: ObservableObject{
       }
     }
     .assign(to: \.dreamCellViewModels, on: self)
+    .store(in: &cancellables)
+    
+    dreamRepo.$newestDream.map { dream in
+      dream.map { dream in
+        DreamCellViewModel(dream: dream)
+
+      }
+    }
+    .assign(to: \.newestDreamViewModel, on: self)
     .store(in: &cancellables)
   }
   

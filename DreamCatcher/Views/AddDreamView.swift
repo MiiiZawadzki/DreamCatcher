@@ -29,7 +29,7 @@ struct AddDreamView: View {
         }
         Button(action: {
           let dream = DreamModel(title: titleText, content: contentText, date: Date())
-          Singleton.shared.dreamRepo.addDream(dream)
+          dreamListVM.dreamRepo.addDream(dream)
           
         }, label: {
           Text("Add")

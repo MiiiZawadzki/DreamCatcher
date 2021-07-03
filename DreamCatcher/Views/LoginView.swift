@@ -8,7 +8,7 @@ struct LoginView: View {
   var body: some View {
     ZStack {
       Circle()
-        .foregroundColor(.green)
+        .foregroundColor(Color(UIColor(red: 241/255, green: 100/255, blue: 150/255, alpha: 1)))
         .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .position(x: 0, y: 0)
       BackgroundPath()
@@ -47,19 +47,19 @@ struct LoginView: View {
         VStack(spacing:0){
           ZStack{
             Rectangle()
-            Color(UIColor(.blue))
+            Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1))
             
+          }
+          .opacity(0.4)
+          ZStack{
+            Rectangle()
+            Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1))
           }
           .opacity(0.6)
           ZStack{
             Rectangle()
-            Color(.blue)
-          }
-          .opacity(0.9)
-          ZStack{
-            Rectangle()
               .ignoresSafeArea()
-            Color(.blue)
+            Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1))
               .ignoresSafeArea()
             HStack{
               Text("Don't have an account?")
@@ -124,6 +124,6 @@ struct BackgroundPath: View {
       path.addLine(to: CGPoint(x: UIScreen.main.bounds.width, y: UIScreen.main.bounds.height))
       path.addLine(to: CGPoint(x:0, y: UIScreen.main.bounds.height))
     }
-    .foregroundColor(.green)
+    .foregroundColor(Color(UIColor(red: 241/255, green: 100/255, blue: 150/255, alpha: 1)))
   }
 }

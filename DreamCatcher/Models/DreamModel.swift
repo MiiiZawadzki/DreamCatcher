@@ -10,3 +10,8 @@ struct DreamModel: Codable, Identifiable{
   var content: String
   var date: Date
 }
+
+class EmptyDream {
+  static let dream: DreamModel = .init(id: nil, title: "Empty", content: "Empty", date: Date())
+}
+

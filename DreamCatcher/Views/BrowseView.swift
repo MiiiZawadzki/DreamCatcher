@@ -6,16 +6,16 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct BrowseView: View {
   @ObservedObject var dreamListVM = Singleton.shared
   var body: some View {
     List(dreamListVM.dreamCellViewModels, id: \.id){ dream in
       HStack{
-        Dream(titleText: dream.dream.title, bodyText: dream.dream.content, date: dream.dream.date)
+        Dream(dreamModel: dream.dream)
       }
     }
-    
   }
 }
 
