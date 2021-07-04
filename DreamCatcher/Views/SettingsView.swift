@@ -12,9 +12,10 @@ struct SettingsView: View {
           Image(systemName: "chevron.backward")
           Text("Back")
         }
+        .foregroundColor(.white)
       })
       .padding()
-      .background(Color(.green))
+      .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
       .frame(width: UIScreen.main.bounds.width, height: 50, alignment: .leading)
       
       Spacer()
@@ -26,9 +27,11 @@ struct SettingsView: View {
           Text("Logout")
           Image(systemName: "lock")
         }
+        .foregroundColor(.white)
       })
       .padding()
-      .background(Color(.green))
+      .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
+      .cornerRadius(10)
       
       Spacer()
       

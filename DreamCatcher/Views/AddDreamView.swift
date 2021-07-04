@@ -25,6 +25,7 @@ struct AddDreamView: View {
             }
             .foregroundColor(self.contentText == "Content" ? .gray : .primary)
           Divider()
+            .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
             .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
         }
         Button(action: {
@@ -36,7 +37,8 @@ struct AddDreamView: View {
         })
         .padding()
         .foregroundColor(.white)
-        .background(Color(.blue))
+        .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
+        .cornerRadius(10)
       }
     }
 }

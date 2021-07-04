@@ -13,30 +13,35 @@ struct HomeView: View {
   var body: some View {
     VStack {
       HStack {
-        Text("Hello, Username!")
+        HStack{
+          Text("Hello,")
+            .bold()
+          Text("\("Usernameeeeeeeeeeeeeeeeee")")
+            .foregroundColor(.appPink)
+            .fontWeight(.heavy)
+          
+        }
         Spacer()
         Button(action: {
           showSettings.toggle()
         }, label: {
           Image(systemName: "gearshape")
+            .accentColor(.appBlack)
         })
       }
       .padding()
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .leading)
       
       Spacer()
-      Text("Yours last saved dream:")
-//      if let safeDream = dreamListVM.newestDreamViewModel?.dream{
-//        Dream(titleText: safeDream.title, bodyText: safeDream.content, date: safeDream.date)
-//      }
-      List(dreamListVM.newestDreamViewModel, id: \.id){ dream in
+      Text("Yours last saved \(Text("Dream:").foregroundColor(.appPink).bold())")
+      
+      ForEach(dreamListVM.newestDreamViewModel, id: \.id){ dream in
         Dream(dreamModel: dream.dream)
+          .padding()
       }
-//      Dream(titleText: "The strange and vivid dreams of COVID-19", bodyText: "First, my daughter drowned in our backyard pool. Then, I was walking down the aisle toward a man who wasn’t my husband. There were frogs everywhere. Since then, I’ve fallen, I’ve flown and I have swum and run tirelessly. Most recently, I walked outside without my contacts and a stranger threw a bag over my head and wrestled me to the ground—that was after my doe-eyed dog was accused of murdering a man. I try desperately to scream for help, but I am always mute. First, my daughter drowned in our backyard pool. Then, I was walking down the aisle toward a man who wasn’t my husband. There were frogs everywhere. Since then, I’ve fallen, I’ve flown and I have swum and run tirelessly. Most recently, I walked outside without my contacts and a stranger threw a bag over my head and wrestled me to the ground—that was after my doe-eyed dog was accused of murdering a man. I try desperately to scream for help, but I am always mute.", date: Date())
-//          .padding()
-        //.frame(minWidth: UIScreen.screenWidth, maxWidth: UIScreen.screenWidth, minHeight:50, maxHeight: UIScreen.screenHeight/2, alignment: .center)
+      
       Spacer()
-      Text("Total dreams saved: 32")
+      Text("Total dreams saved: \(Text("\(dreamListVM.dreamRepo.dreams.count)").foregroundColor(.appPink).bold())")
       Spacer()
       
     }.sheet(isPresented: $showSettings, content: {

@@ -35,17 +35,14 @@ class DreamRepository: ObservableObject{
   }
   
   func deleteDream(_ dream: DreamModel){
-    db.collection("dreams").document(dream.id!).delete() { err in
-      if let err = err {
-        print("Error removing document: \(err)")
-      } else {
-        print("Document successfully removed!")
+    if let dreamId = dream.id{
+      db.collection("dreams").document(dreamId).delete() { err in
+        if let err = err {
+          print("Error removing document: \(err)")
+        } else {
+          print("Document successfully removed!")
+        }
       }
     }
-    //    do {
-    //      let _ = try db.collection("dreams").addDocument(from: dream)
-    //    } catch {
-    //      fatalError("Unable to encode")
-    //    }
   }
 }

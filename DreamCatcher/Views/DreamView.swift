@@ -11,32 +11,38 @@ struct Dream: View {
   @State var dreamModel : DreamModel
   @ObservedObject var dreamListVM = Singleton.shared
   var body: some View {
-    VStack{
+    VStack(spacing:0){
+      // top stack - Date and xmark
       HStack{
         Text(dreamModel.date, style: .date)
         .padding()
+          .foregroundColor(.appBlack)
       Spacer()
       Button(action: {
         dreamListVM.dreamRepo.deleteDream(dreamModel)
       }, label: {
         Image(systemName: "xmark.circle")
           .resizable()
-          .frame(width: 32, height: 32, alignment: .center)
-          .foregroundColor(.black)
+          .frame(width: 24, height: 24, alignment: .center)
+          .foregroundColor(.appBlack)
       })
-      .frame(width: 40, height: 40, alignment: .center)
+      .padding()
       }
+      
+      // title stack
       Text(dreamModel.title)
         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
         .padding()
+        .foregroundColor(.appBlack)
       
+      // content stack
       Text(dreamModel.content)
         .padding()
+        .foregroundColor(.appBlack)
       Divider()
     }
-    .background(Color(.blue))
+    .background(Color.appPink)
     .cornerRadius(10)
-    //      .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
   }
 }
 

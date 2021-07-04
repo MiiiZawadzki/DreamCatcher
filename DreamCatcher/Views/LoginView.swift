@@ -8,7 +8,7 @@ struct LoginView: View {
   var body: some View {
     ZStack {
       Circle()
-        .foregroundColor(Color(UIColor(red: 241/255, green: 100/255, blue: 150/255, alpha: 1)))
+        .foregroundColor(.appPink)
         .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .position(x: 0, y: 0)
       BackgroundPath()
@@ -24,13 +24,7 @@ struct LoginView: View {
           Text("Log In with:")
           Circle()
             .frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-          Circle()
-            .frame(width: 32, height: 32, alignment: .center)
-            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-          Circle()
-            .frame(width: 32, height: 32, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            .foregroundColor(.appBlack)
           
         }
         Spacer()
@@ -41,32 +35,35 @@ struct LoginView: View {
         })
         .padding()
         .foregroundColor(.white)
-        .background(Color(.blue))
+        .background(Color.appBlack)
+        .cornerRadius(10)
         
         Spacer()
         VStack(spacing:0){
           ZStack{
             Rectangle()
-            Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1))
+            Color.appBlack
             
           }
           .opacity(0.4)
           ZStack{
             Rectangle()
-            Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1))
+            Color.appBlack
           }
           .opacity(0.6)
           ZStack{
             Rectangle()
               .ignoresSafeArea()
-            Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1))
+            Color.appBlack
               .ignoresSafeArea()
             HStack{
               Text("Don't have an account?")
+                .foregroundColor(.appDarkerWhite)
               Button(action: {
                 showRegister = true
               }, label: {
                 Text("Sign Up")
+                  .underline()
               })
               .foregroundColor(.white)
             }
@@ -102,8 +99,11 @@ struct Field: View{
       TextField(fieldPlaceholder, text: $fieldText)
         .frame(width: .none, height: 30)
         .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+        .foregroundColor(.appBlack)
       Divider()
+        .background(Color.appBlack)
         .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
+
     }
   }
 }
@@ -124,6 +124,6 @@ struct BackgroundPath: View {
       path.addLine(to: CGPoint(x: UIScreen.main.bounds.width, y: UIScreen.main.bounds.height))
       path.addLine(to: CGPoint(x:0, y: UIScreen.main.bounds.height))
     }
-    .foregroundColor(Color(UIColor(red: 241/255, green: 100/255, blue: 150/255, alpha: 1)))
+    .foregroundColor(.appPink)
   }
 }
