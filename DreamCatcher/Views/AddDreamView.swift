@@ -8,10 +8,32 @@
 import SwiftUI
 
 struct AddDreamView: View {
+  init() {
+      UITextView.appearance().backgroundColor = .clear
+  }
   @ObservedObject var dreamListVM = Singleton.shared
   @State private var contentText:String = "Content"
   @State private var titleText:String = ""
   var body: some View {
+    ZStack{
+      Path { path in
+        path.move(to: CGPoint(x: UIScreen.main.bounds.width, y:0.0))
+        path.addCurve(
+          to:CGPoint(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height/4),
+          control1:CGPoint(x:UIScreen.main.bounds.width*(0.8), y:UIScreen.main.bounds.height/4),
+          control2:CGPoint(x:UIScreen.main.bounds.width*(0.8), y:UIScreen.main.bounds.height/6))
+      }
+      .foregroundColor(.appPink)
+      .opacity(0.85)
+      Path { path in
+        path.move(to: CGPoint(x: UIScreen.main.bounds.width, y:UIScreen.main.bounds.width-50))
+        path.addCurve(
+          to:CGPoint(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height),
+          control1:CGPoint(x:UIScreen.main.bounds.width*(0.5), y:UIScreen.main.bounds.height-70),
+          control2:CGPoint(x:UIScreen.main.bounds.width, y:UIScreen.main.bounds.height-50))
+      }
+      .foregroundColor(.appPink)
+      .opacity(0.85)
     VStack{
       Spacer()
       Field(fieldPlaceholder: "Title", fieldText: $titleText)
@@ -43,6 +65,7 @@ struct AddDreamView: View {
       Spacer()
     }.contentShape(Rectangle())
     .onTapGesture {endEditing()}
+    }
   }
   private func endEditing() {
     UIApplication.shared.endEditing()
