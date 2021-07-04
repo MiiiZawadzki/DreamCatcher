@@ -26,7 +26,7 @@ struct HomeView: View {
           showSettings.toggle()
         }, label: {
           Image(systemName: "gearshape")
-            .accentColor(.appBlack)
+            .accentColor(Color(UIColor.label))
         })
       }
       .padding()

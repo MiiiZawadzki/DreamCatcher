@@ -11,40 +11,46 @@ struct AddDreamView: View {
   @ObservedObject var dreamListVM = Singleton.shared
   @State private var contentText:String = "Content"
   @State private var titleText:String = ""
-    var body: some View {
+  var body: some View {
+    VStack{
+      Spacer()
+      Field(fieldPlaceholder: "Title", fieldText: $titleText)
       VStack{
-        Field(fieldPlaceholder: "Title", fieldText: $titleText)
-        VStack{
-          TextEditor(text: $contentText)
-            .frame(width: .none, height: 200)
-            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-            .onTapGesture {
-              if self.contentText == "Content" {
-                self.contentText = ""
-              }
+        TextEditor(text: $contentText)
+          .frame(width: .none, height: 200)
+          .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+          .onTapGesture {
+            if self.contentText == "Content" {
+              self.contentText = ""
             }
-            .foregroundColor(self.contentText == "Content" ? .gray : .primary)
-          Divider()
-            .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
-            .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
-        }
-        Button(action: {
-          let dream = DreamModel(title: titleText, content: contentText, date: Date())
-          dreamListVM.dreamRepo.addDream(dream)
-          
-        }, label: {
-          Text("Add")
-        })
-        .padding()
-        .foregroundColor(.white)
-        .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
-        .cornerRadius(10)
+          }
+          .foregroundColor(self.contentText == "Content" ? .gray : .primary)
+        Divider()
+          .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
+          .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
       }
-    }
+      Button(action: {
+        let dream = DreamModel(title: titleText, content: contentText, date: Date())
+        dreamListVM.dreamRepo.addDream(dream)
+        
+      }, label: {
+        Text("Add")
+      })
+      .padding()
+      .foregroundColor(.white)
+      .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
+      .cornerRadius(10)
+      Spacer()
+    }.contentShape(Rectangle())
+    .onTapGesture {endEditing()}
+  }
+  private func endEditing() {
+    UIApplication.shared.endEditing()
+  }
 }
 
 struct AddDreamView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddDreamView()
-    }
+  static var previews: some View {
+    AddDreamView()
+  }
 }

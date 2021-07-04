@@ -81,9 +81,13 @@ struct LoginView: View {
     .fullScreenCover(isPresented: $showHome, content: {
       MainTabView()
     })
+    .contentShape(Rectangle())
+    .onTapGesture {endEditing()}
     
   }
-  
+  private func endEditing() {
+    UIApplication.shared.endEditing()
+  }
 }
 
 struct LoginView_Previews: PreviewProvider {
@@ -103,7 +107,7 @@ struct Field: View{
       Divider()
         .background(Color.appBlack)
         .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
-
+      
     }
   }
 }

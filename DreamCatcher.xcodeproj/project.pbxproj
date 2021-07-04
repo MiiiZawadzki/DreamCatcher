@@ -23,6 +23,7 @@
 		F0BFCF2426833F0D00B6CF72 /* DreamCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFCF2326833F0D00B6CF72 /* DreamCellViewModel.swift */; };
 		F0BFCF26268340A400B6CF72 /* DreamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFCF25268340A400B6CF72 /* DreamListViewModel.swift */; };
 		F0BFCF28268355BD00B6CF72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0BFCF27268355BD00B6CF72 /* GoogleService-Info.plist */; };
+		F0D5057F269224ED00DB002B /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5057E269224ED00DB002B /* UIApplicationExtension.swift */; };
 		F0E1A4EE26820C99003BFE20 /* AddDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1A4ED26820C99003BFE20 /* AddDreamView.swift */; };
 		F0F3E76A262DD2E800A9C085 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3E769262DD2E800A9C085 /* RegisterView.swift */; };
 		F0F9C92E2683773E009B8FB4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F0F9C92D2683773E009B8FB4 /* FirebaseAuth */; };
@@ -50,6 +51,7 @@
 		F0BFCF2326833F0D00B6CF72 /* DreamCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCellViewModel.swift; sourceTree = "<group>"; };
 		F0BFCF25268340A400B6CF72 /* DreamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamListViewModel.swift; sourceTree = "<group>"; };
 		F0BFCF27268355BD00B6CF72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F0D5057E269224ED00DB002B /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F0E1A4ED26820C99003BFE20 /* AddDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamView.swift; sourceTree = "<group>"; };
 		F0F3E769262DD2E800A9C085 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F0F9C93326837BBA009B8FB4 /* DreamRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamRepository.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F041F48E2691BC9D00455881 /* ColorExtension.swift */,
+				F0D5057E269224ED00DB002B /* UIApplicationExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				F0E1A4EE26820C99003BFE20 /* AddDreamView.swift in Sources */,
 				F0F3E76A262DD2E800A9C085 /* RegisterView.swift in Sources */,
 				F0070C1D2656469700626EFB /* BrowseView.swift in Sources */,
+				F0D5057F269224ED00DB002B /* UIApplicationExtension.swift in Sources */,
 				F063BF13265ADC9000D9AD35 /* DreamView.swift in Sources */,
 				F09AFE2426281A95002F111D /* SceneDelegate.swift in Sources */,
 				F0BFCF2426833F0D00B6CF72 /* DreamCellViewModel.swift in Sources */,
