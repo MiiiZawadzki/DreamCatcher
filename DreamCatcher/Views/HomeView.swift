@@ -13,7 +13,7 @@ struct HomeView: View {
           control2:CGPoint(x:UIScreen.main.bounds.width*(0.75), y:-150+UIScreen.main.bounds.height/6))
       }
       .foregroundColor(.appPink)
-      .opacity(0.85)
+      .opacity(0.4)
       Path { path in
         path.move(to: CGPoint(x: UIScreen.main.bounds.width, y:0.0))
         path.addCurve(
@@ -22,7 +22,7 @@ struct HomeView: View {
           control2:CGPoint(x:UIScreen.main.bounds.width*(0.5), y:UIScreen.main.bounds.height/6))
       }
       .foregroundColor(.appPink)
-      .opacity(0.85)
+      .opacity(0.4)
       VStack {
         HStack {
           HStack{
@@ -45,7 +45,7 @@ struct HomeView: View {
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .leading)
         
         Spacer()
-        Text("Yours last saved \(Text("Dream:").foregroundColor(.appPink).bold())")
+        Text("Yours last saved \(Text("Dream:").foregroundColor(.appPink).fontWeight(.heavy))")
         
         ForEach(dreamListVM.newestDreamViewModel, id: \.id){ dream in
           Dream(dreamModel: dream.dream)
