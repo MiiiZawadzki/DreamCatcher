@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Dream: View {
   @State var dreamModel : DreamModel
+  @State private var showingPopover = false
   @ObservedObject var dreamListVM = Singleton.shared
   var body: some View {
     VStack(spacing:0){
@@ -21,9 +22,9 @@ struct Dream: View {
       Button(action: {
         dreamListVM.dreamRepo.deleteDream(dreamModel)
       }, label: {
-        Image(systemName: "xmark.circle")
+        Image(systemName: "trash.circle")
           .resizable()
-          .frame(width: 24, height: 24, alignment: .center)
+          .frame(width: 32, height: 32, alignment: .center)
           .foregroundColor(.appBlack)
       })
       .padding()
@@ -41,8 +42,14 @@ struct Dream: View {
         .foregroundColor(.appBlack)
       Divider()
     }
+    .sheet(isPresented: $showingPopover, content: {
+      FullDreamView(dreamModel: dreamModel)
+    })
     .background(Color.appPink)
     .cornerRadius(10)
+    .onTapGesture {
+      showingPopover.toggle()
+    }
   }
 }
 

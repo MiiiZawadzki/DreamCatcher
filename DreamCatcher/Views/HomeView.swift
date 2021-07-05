@@ -43,6 +43,9 @@ struct HomeView: View {
         }
         .padding()
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .leading)
+        .fullScreenCover(isPresented: $showSettings, content: {
+          SettingsView()
+        })
         
         Spacer()
         Text("Yours last saved \(Text("Dream:").foregroundColor(.appPink).fontWeight(.heavy))")
@@ -56,9 +59,8 @@ struct HomeView: View {
         Text("Total dreams saved: \(Text("\(dreamListVM.dreamRepo.dreams.count)").foregroundColor(.appPink).bold())")
         Spacer()
         
-      }.sheet(isPresented: $showSettings, content: {
-        SettingsView()
-      })
+      }
+      
     }
   }
 }

@@ -13,7 +13,7 @@ struct AddDreamView: View {
       UITextView.appearance().backgroundColor = .clear
   }
   @ObservedObject var dreamListVM = Singleton.shared
-  @State private var contentText:String = "Content"
+  @State private var contentText:String = ""
   @State private var titleText:String = ""
   var body: some View {
     ZStack{
@@ -43,7 +43,7 @@ struct AddDreamView: View {
           .font(.title)
           .foregroundColor(.appPink)
           .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-      Field(fieldPlaceholder: "Title", fieldText: $titleText)
+      Field(fieldPlaceholder: "", fieldText: $titleText)
       }
       
       VStack(alignment: .leading){
@@ -55,12 +55,6 @@ struct AddDreamView: View {
         TextEditor(text: $contentText)
           .frame(width: .none, height: 200)
           .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-          .onTapGesture {
-            if self.contentText == "Content" {
-              self.contentText = ""
-            }
-          }
-          .foregroundColor(self.contentText == "Content" ? .gray : .primary)
         Divider()
           .background(Color.appBlack)
           .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
@@ -70,7 +64,7 @@ struct AddDreamView: View {
         dreamListVM.dreamRepo.addDream(dream)
         endEditing()
         showingPopover = true
-        self.contentText = "Content"
+        self.contentText = ""
         self.titleText = ""
       }, label: {
         Text("Add")

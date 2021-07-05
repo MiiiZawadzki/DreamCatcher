@@ -15,7 +15,7 @@ struct SettingsView: View {
         .foregroundColor(.white)
       })
       .padding()
-      .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
+      .background(Color.appBlack)
       .frame(width: UIScreen.main.bounds.width, height: 50, alignment: .leading)
       
       Spacer()

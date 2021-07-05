@@ -13,6 +13,7 @@
 		F041F48F2691BC9D00455881 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F041F48E2691BC9D00455881 /* ColorExtension.swift */; };
 		F0623FCB2637554F007C068A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623FCA2637554F007C068A /* MainTabView.swift */; };
 		F063BF13265ADC9000D9AD35 /* DreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063BF12265ADC9000D9AD35 /* DreamView.swift */; };
+		F08B45FB2693902C001133D7 /* FullDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B45FA2693902C001133D7 /* FullDreamView.swift */; };
 		F09AFE2226281A95002F111D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AFE2126281A95002F111D /* AppDelegate.swift */; };
 		F09AFE2426281A95002F111D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AFE2326281A95002F111D /* SceneDelegate.swift */; };
 		F09AFE2626281A95002F111D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AFE2526281A95002F111D /* LoginView.swift */; };
@@ -39,6 +40,7 @@
 		F041F48E2691BC9D00455881 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		F0623FCA2637554F007C068A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F063BF12265ADC9000D9AD35 /* DreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamView.swift; sourceTree = "<group>"; };
+		F08B45FA2693902C001133D7 /* FullDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDreamView.swift; sourceTree = "<group>"; };
 		F09AFE1E26281A95002F111D /* DreamCatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamCatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09AFE2126281A95002F111D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09AFE2326281A95002F111D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				F0070C1E265651A600626EFB /* SettingsView.swift */,
 				F063BF12265ADC9000D9AD35 /* DreamView.swift */,
 				F0E1A4ED26820C99003BFE20 /* AddDreamView.swift */,
+				F08B45FA2693902C001133D7 /* FullDreamView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08B45FB2693902C001133D7 /* FullDreamView.swift in Sources */,
 				F09AFE2226281A95002F111D /* AppDelegate.swift in Sources */,
 				F0BFCF21268327BA00B6CF72 /* DreamModel.swift in Sources */,
 				F0070C1F265651A600626EFB /* SettingsView.swift in Sources */,
