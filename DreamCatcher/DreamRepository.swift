@@ -1,6 +1,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Firebase
 
 class DreamRepository: ObservableObject{
   
@@ -15,6 +16,7 @@ class DreamRepository: ObservableObject{
   
   func loadData() {
     db.collection("dreams")
+      .whereField("userId", isEqualTo: Auth.auth().currentUser?.uid)
       .order(by: "date")
       .addSnapshotListener { (querySnapshot, error) in
         if let querySnapshot = querySnapshot{
@@ -28,7 +30,9 @@ class DreamRepository: ObservableObject{
   
   func addDream(_ dream: DreamModel){
     do {
-      let _ = try db.collection("dreams").addDocument(from: dream)
+      var addedDream = dream
+      addedDream.userId = Auth.auth().currentUser?.uid
+      let _ = try db.collection("dreams").addDocument(from: addedDream)
     } catch {
       fatalError("Unable to encode")
     }

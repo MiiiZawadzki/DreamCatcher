@@ -9,6 +9,7 @@ struct DreamModel: Codable, Identifiable{
   var title: String
   var content: String
   var date: Date
+  var userId: String?
 }
 
 class EmptyDream {

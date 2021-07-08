@@ -11,46 +11,60 @@ struct Dream: View {
   @State var dreamModel : DreamModel
   @State private var showingPopover = false
   @ObservedObject var dreamListVM = Singleton.shared
+  @ViewBuilder
   var body: some View {
-    VStack(spacing:0){
-      // top stack - Date and xmark
-      HStack{
-        Text(dreamModel.date, style: .date)
-        .padding()
+    if dreamModel.id != nil{
+      VStack(spacing:0){
+        // top stack - Date and xmark
+        HStack{
+          Text(dreamModel.date, style: .date)
+            .padding()
+            .foregroundColor(.appBlack)
+          Spacer()
+          Button(action: {
+            dreamListVM.dreamRepo.deleteDream(dreamModel)
+          }, label: {
+            Image(systemName: "trash.circle")
+              .resizable()
+              .frame(width: 32, height: 32, alignment: .center)
+              .foregroundColor(.appBlack)
+          })
+          .padding()
+        }
+        
+        // title stack
+        Text(dreamModel.title)
+          .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+          .padding()
           .foregroundColor(.appBlack)
-      Spacer()
-      Button(action: {
-        dreamListVM.dreamRepo.deleteDream(dreamModel)
-      }, label: {
-        Image(systemName: "trash.circle")
-          .resizable()
-          .frame(width: 32, height: 32, alignment: .center)
+        
+        // content stack
+        Text(dreamModel.content)
+          .padding()
           .foregroundColor(.appBlack)
-      })
-      .padding()
+        Divider()
       }
-      
-      // title stack
-      Text(dreamModel.title)
-        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-        .padding()
-        .foregroundColor(.appBlack)
-      
-      // content stack
-      Text(dreamModel.content)
-        .padding()
-        .foregroundColor(.appBlack)
-      Divider()
+      .sheet(isPresented: $showingPopover, content: {
+        FullDreamView(dreamModel: dreamModel)
+      })
+      .background(Color.appPink)
+      .cornerRadius(10)
+      .onTapGesture {
+        showingPopover.toggle()
+      }
     }
-    .sheet(isPresented: $showingPopover, content: {
-      FullDreamView(dreamModel: dreamModel)
-    })
-    .background(Color.appPink)
-    .cornerRadius(10)
-    .onTapGesture {
-      showingPopover.toggle()
+    else{
+      VStack{
+      Text("You don't have any dreams added yet")
+      Text(":c")
+        .fontWeight(.heavy)
+      }
+      .padding()
+      .background(Color.appPink)
+      .cornerRadius(10)
     }
   }
+  
 }
 
 struct Dream_Previews: PreviewProvider {
@@ -59,3 +73,4 @@ struct Dream_Previews: PreviewProvider {
     Dream(dreamModel: dream)
   }
 }
+

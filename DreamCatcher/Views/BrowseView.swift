@@ -10,19 +10,29 @@ import Foundation
 
 struct BrowseView: View {
   @ObservedObject var dreamListVM = Singleton.shared
+  @ViewBuilder
   var body: some View {
-//    List(dreamListVM.dreamCellViewModels, id: \.id){ dream in
-//      Dream(dreamModel: dream.dream)
-//    }
-    ScrollView{
-      LazyVStack(spacing:0){
-        ForEach(dreamListVM.dreamCellViewModels, id: \.id){ dream in
-          Dream(dreamModel: dream.dream)
-            .padding(.trailing)
-            .padding(.leading)
-            .padding(.bottom)
+    if dreamListVM.dreamCellViewModels.count != 0{
+      ScrollView{
+        LazyVStack(spacing:0){
+          ForEach(dreamListVM.dreamCellViewModels, id: \.id){ dream in
+            Dream(dreamModel: dream.dream)
+              .padding(.trailing)
+              .padding(.leading)
+              .padding(.bottom)
+          }
         }
       }
+    }
+    else{
+      VStack{
+        Text("You don't have any dreams added yet")
+        Text(":c")
+          .fontWeight(.heavy)
+        }
+        .padding()
+        .background(Color.appPink)
+        .cornerRadius(10)
     }
   }
 }
