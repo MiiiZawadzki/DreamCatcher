@@ -55,10 +55,10 @@ struct Dream: View {
     }
     else{
       VStack{
-      Text("You don't have any dreams added yet")
+        Text("You don't have any dreams added yet")
       }
       .padding()
-      .background(Color.appPink)
+      .background(Color.appPink.opacity(0.6))
       .cornerRadius(10)
     }
   }

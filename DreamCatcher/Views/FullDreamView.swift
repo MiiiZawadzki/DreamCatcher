@@ -10,7 +10,6 @@ import SwiftUI
 struct FullDreamView: View {
   @Environment(\.presentationMode) var presentationMode
   @State var dreamModel : DreamModel
-  @State private var showingPopover = false
   @ObservedObject var dreamListVM = Singleton.shared
   var body: some View {
     ZStack{
@@ -35,96 +34,90 @@ struct FullDreamView: View {
         .foregroundColor(.appPink)
         .opacity(0.4)
       }
-    VStack{
-      Spacer()
-      // Back button
-      Button(action: {
-        presentationMode.wrappedValue.dismiss()
-      }, label: {
-        HStack{
-          Image(systemName: "chevron.backward")
-          Text("Back")
-            .underline()
-          Spacer()
-          Button(action: {
-            dreamListVM.dreamRepo.deleteDream(dreamModel)
-            presentationMode.wrappedValue.dismiss()
-          }, label: {
-            Image(systemName: "trash.circle")
-              .resizable()
-              .frame(width: 32, height: 32, alignment: .center)
-              .accentColor(Color(UIColor.label))
+      VStack{
+        Spacer()
+        // Back button
+        Button(action: {
+          presentationMode.wrappedValue.dismiss()
+        }, label: {
+          HStack{
+            Image(systemName: "chevron.backward")
+            Text("Back")
+              .underline()
+            Spacer()
+            Button(action: {
+              dreamListVM.dreamRepo.deleteDream(dreamModel)
+              presentationMode.wrappedValue.dismiss()
+            }, label: {
+              Image(systemName: "trash.circle")
+                .resizable()
+                .frame(width: 32, height: 32, alignment: .center)
+                .accentColor(Color(UIColor.label))
+              
+            })
+          }
+          .foregroundColor(.white)
+        })
+        .padding()
+        .background(Color.appBlack)
+        .frame(width: UIScreen.main.bounds.width, height: 50, alignment: .leading)
+        ScrollView{
+          VStack(alignment: .leading){
+            Text("Date:")
+              .bold()
+              .font(.title2)
+              .foregroundColor(.appPink)
+              .padding(.leading)
+              .padding(.top)
+            // top stack - Date and xmark
+            HStack{
+              Text(dreamModel.date, style: .date)
+                .padding()
+                .foregroundColor(.appDarkerWhite)
+              Spacer()
+              
+            }
+          }
+          // title stack
+          VStack(alignment: .leading){
+            Text("Title:")
+              .bold()
+              .font(.title2)
+              .foregroundColor(.appPink)
+              .padding(.leading)
+              .padding(.top)
+            // top stack - Date and xmark
+            HStack{
+              Text(dreamModel.title)
+                .padding()
+                .foregroundColor(.appDarkerWhite)
+              Spacer()
+              
+            }
+          }
+          
+          // content stack
+          VStack(alignment: .leading){
+            Text("Content:")
+              .bold()
+              .font(.title2)
+              .foregroundColor(.appPink)
+              .padding(.leading)
+              .padding(.top)
             
-          })
+            HStack{
+              Text(dreamModel.content)
+                .padding()
+                .foregroundColor(.appDarkerWhite)
+              Spacer()
+              
+            }
+          }
         }
-        .foregroundColor(.white)
-      })
-      .padding()
-      .background(Color.appBlack)
-      .frame(width: UIScreen.main.bounds.width, height: 50, alignment: .leading)
-      ScrollView{
-      VStack(alignment: .leading){
-        Text("Date:")
-          .bold()
-          .font(.title2)
-          .foregroundColor(.appPink)
-          .padding(.leading)
-          .padding(.top)
-        // top stack - Date and xmark
-        HStack{
-          Text(dreamModel.date, style: .date)
-            .padding()
-            .foregroundColor(.appDarkerWhite)
-          Spacer()
-          
-        }
+        Spacer()
       }
-      // title stack
-      VStack(alignment: .leading){
-        Text("Title:")
-          .bold()
-          .font(.title2)
-          .foregroundColor(.appPink)
-          .padding(.leading)
-          .padding(.top)
-        // top stack - Date and xmark
-        HStack{
-          Text(dreamModel.title)
-            .padding()
-            .foregroundColor(.appDarkerWhite)
-          Spacer()
-          
-        }
-      }
-
-      // content stack
-      VStack(alignment: .leading){
-        Text("Content:")
-          .bold()
-          .font(.title2)
-          .foregroundColor(.appPink)
-          .padding(.leading)
-          .padding(.top)
-
-        HStack{
-          Text(dreamModel.content)
-            .padding()
-            .foregroundColor(.appDarkerWhite)
-          Spacer()
-          
-        }
-        }
-      }
-      Spacer()
     }
-    }
-    .sheet(isPresented: $showingPopover, content: {
-      SettingsView()
-    })
     .background(Color.appBlack)
-    .onTapGesture {
-      showingPopover.toggle()
-    }
     .ignoresSafeArea()
   }
 }

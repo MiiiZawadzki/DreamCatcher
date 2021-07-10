@@ -4,7 +4,7 @@ struct MainTabView: View {
   init() {
     UITabBar.appearance().barTintColor = UIColor(Color.appBlack)
     UITabBar.appearance().unselectedItemTintColor = UIColor(Color.black)
-
+    
   }
   var body: some View {
     TabView {

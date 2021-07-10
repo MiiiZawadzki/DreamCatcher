@@ -103,9 +103,6 @@ struct Field: View{
       TextField(fieldPlaceholder, text: $fieldText)
         .frame(width: .none, height: 30)
         .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-      Divider()
-        .background(Color.appBlack)
-        .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
       
     }
   }

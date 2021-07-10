@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
   @Environment(\.presentationMode) var presentationMode
+  @ObservedObject var dreamListVM = Singleton.shared
   @State var logout: Bool = false
   var body: some View {
     VStack {
@@ -24,8 +25,8 @@ struct SettingsView: View {
         logout.toggle()
       }, label: {
         HStack{
-          Text("Logout")
-          Image(systemName: "lock")
+          Text("Delete all added dreams")
+          Image(systemName: "trash")
         }
         .foregroundColor(.white)
       })
@@ -36,9 +37,6 @@ struct SettingsView: View {
       Spacer()
       
     }
-    .fullScreenCover(isPresented: $logout, content: {
-      LoginView()
-    })
   }
 }
 

@@ -22,10 +22,10 @@ struct RegisterView: View {
         VStack{
           Spacer()
           VStack(spacing:20){
-//            Field(fieldPlaceholder: "Username")
-//            Field(fieldPlaceholder: "Email")
-//            Field(fieldPlaceholder: "Password")
-//            Field(fieldPlaceholder: "Confirm password")
+            //            Field(fieldPlaceholder: "Username")
+            //            Field(fieldPlaceholder: "Email")
+            //            Field(fieldPlaceholder: "Password")
+            //            Field(fieldPlaceholder: "Confirm password")
           }
           Spacer()
           Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {

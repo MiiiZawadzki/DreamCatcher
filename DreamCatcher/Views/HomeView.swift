@@ -24,27 +24,13 @@ struct HomeView: View {
       .foregroundColor(.appPink)
       .opacity(0.4)
       VStack {
-        HStack {
-          Spacer()
-          Button(action: {
-            showSettings.toggle()
-          }, label: {
-            Image(systemName: "gearshape")
-              .accentColor(Color(UIColor.label))
-          })
-        }
-        .padding()
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 40, alignment: .leading)
-        .fullScreenCover(isPresented: $showSettings, content: {
-          SettingsView()
-        })
-        
         Spacer()
         Text("Yours last saved \(Text("Dream:").foregroundColor(.appPink).fontWeight(.heavy))")
         
         ForEach(dreamListVM.newestDreamViewModel, id: \.id){ dream in
           Dream(dreamModel: dream.dream)
             .padding()
+            .opacity(0.90)
         }
         
         Spacer()

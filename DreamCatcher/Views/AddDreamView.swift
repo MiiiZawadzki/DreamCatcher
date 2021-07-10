@@ -10,7 +10,7 @@ import SwiftUI
 struct AddDreamView: View {
   @State private var showingPopover = false
   init() {
-      UITextView.appearance().backgroundColor = .clear
+    UITextView.appearance().backgroundColor = .clear
   }
   @ObservedObject var dreamListVM = Singleton.shared
   @State private var contentText:String = ""
@@ -35,50 +35,55 @@ struct AddDreamView: View {
       }
       .foregroundColor(.appPink)
       .opacity(0.65)
-    VStack{
-      Spacer()
-      VStack(alignment: .leading){
-        Text("Title:")
-          .bold()
-          .font(.title)
-          .foregroundColor(.appPink)
-          .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-      Field(fieldPlaceholder: "", fieldText: $titleText)
-      }
-      
-      VStack(alignment: .leading){
-        Text("Content:")
-          .bold()
-          .font(.title2)
-          .foregroundColor(.appPink)
-          .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-        TextEditor(text: $contentText)
-          .frame(width: .none, height: 200)
-          .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-        Divider()
-          .background(Color.appBlack)
-          .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
-      }
-      Button(action: {
-        let dream = DreamModel(title: titleText, content: contentText, date: Date())
-        dreamListVM.dreamRepo.addDream(dream)
-        endEditing()
-        showingPopover = true
-        self.contentText = ""
-        self.titleText = ""
-      }, label: {
-        Text("Add")
-      })
-      .padding()
-      .foregroundColor(.white)
-      .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
-      .cornerRadius(10)
-      .alert(isPresented: $showingPopover) {
+      VStack{
+        Spacer()
+        VStack(alignment: .leading){
+          Text("Title:")
+            .bold()
+            .font(.title2)
+            .foregroundColor(.appPink)
+            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+          Field(fieldPlaceholder: "", fieldText: $titleText)
+          Rectangle()
+            .fill(Color.appPink)
+            .frame(height: 1)
+            .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
+        }
+        
+        VStack(alignment: .leading){
+          Text("Content:")
+            .bold()
+            .font(.title2)
+            .foregroundColor(.appPink)
+            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+          TextEditor(text: $contentText)
+            .frame(width: .none, height: 200)
+            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+          Rectangle()
+            .fill(Color.appPink)
+            .frame(height: 1)
+            . padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 35))
+        }
+        Button(action: {
+          let dream = DreamModel(title: titleText, content: contentText, date: Date())
+          dreamListVM.dreamRepo.addDream(dream)
+          endEditing()
+          showingPopover = true
+          self.contentText = ""
+          self.titleText = ""
+        }, label: {
+          Text("Add")
+        })
+        .padding()
+        .foregroundColor(.white)
+        .background(Color(UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)))
+        .cornerRadius(10)
+        .alert(isPresented: $showingPopover) {
           Alert(title: Text("Your dream has been added"), message: Text("You can see all saved dreams in the Browse tab"), dismissButton: .default(Text("Close")))
-      }
-      Spacer()
-    }.contentShape(Rectangle())
-    .onTapGesture {endEditing()}
+        }
+        Spacer()
+      }.contentShape(Rectangle())
+      .onTapGesture {endEditing()}
     }
   }
   private func endEditing() {
