@@ -40,13 +40,7 @@ class DreamRepository: ObservableObject{
   
   func deleteDream(_ dream: DreamModel){
     if let dreamId = dream.id{
-      db.collection("dreams").document(dreamId).delete() { err in
-        if let err = err {
-          print("Error removing document: \(err)")
-        } else {
-          print("Document successfully removed!")
-        }
-      }
+      db.collection("dreams").document(dreamId).delete()
     }
   }
 }

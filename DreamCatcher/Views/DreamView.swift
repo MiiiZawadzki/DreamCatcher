@@ -56,8 +56,6 @@ struct Dream: View {
     else{
       VStack{
       Text("You don't have any dreams added yet")
-      Text(":c")
-        .fontWeight(.heavy)
       }
       .padding()
       .background(Color.appPink)

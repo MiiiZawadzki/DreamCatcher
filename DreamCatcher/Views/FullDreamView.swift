@@ -13,6 +13,28 @@ struct FullDreamView: View {
   @State private var showingPopover = false
   @ObservedObject var dreamListVM = Singleton.shared
   var body: some View {
+    ZStack{
+      VStack{
+        Path { path in
+          path.move(to: CGPoint(x: UIScreen.main.bounds.width, y:100))
+          path.addCurve(
+            to:CGPoint(x:UIScreen.main.bounds.width,y:UIScreen.main.bounds.height/4),
+            control1:CGPoint(x:UIScreen.main.bounds.width*(0.8), y:UIScreen.main.bounds.height/4),
+            control2:CGPoint(x:UIScreen.main.bounds.width*(0.8), y:UIScreen.main.bounds.height/6))
+        }
+        .foregroundColor(.appPink)
+        .opacity(0.4)
+        
+        Path { path in
+          path.move(to: CGPoint(x:0, y:100))
+          path.addCurve(
+            to:CGPoint(x:0,y:UIScreen.main.bounds.height/4),
+            control1:CGPoint(x:UIScreen.main.bounds.width*(0.4), y:UIScreen.main.bounds.height/4),
+            control2:CGPoint(x:UIScreen.main.bounds.width*(0.5), y:UIScreen.main.bounds.height/6))
+        }
+        .foregroundColor(.appPink)
+        .opacity(0.4)
+      }
     VStack{
       Spacer()
       // Back button
@@ -26,6 +48,7 @@ struct FullDreamView: View {
           Spacer()
           Button(action: {
             dreamListVM.dreamRepo.deleteDream(dreamModel)
+            presentationMode.wrappedValue.dismiss()
           }, label: {
             Image(systemName: "trash.circle")
               .resizable()
@@ -94,6 +117,7 @@ struct FullDreamView: View {
       }
       Spacer()
     }
+    }
     .sheet(isPresented: $showingPopover, content: {
       SettingsView()
     })
@@ -101,6 +125,7 @@ struct FullDreamView: View {
     .onTapGesture {
       showingPopover.toggle()
     }
+    .ignoresSafeArea()
   }
 }
 

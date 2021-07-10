@@ -11,6 +11,7 @@
 		F0070C1F265651A600626EFB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0070C1E265651A600626EFB /* SettingsView.swift */; };
 		F037825E2638478300779801 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F037825D2638478300779801 /* HomeView.swift */; };
 		F041F48F2691BC9D00455881 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F041F48E2691BC9D00455881 /* ColorExtension.swift */; };
+		F05C69842699B9B3001AF91C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05C69832699B9B3001AF91C /* Launch Screen.storyboard */; };
 		F0623FCB2637554F007C068A /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0623FCA2637554F007C068A /* MainTabView.swift */; };
 		F063BF13265ADC9000D9AD35 /* DreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F063BF12265ADC9000D9AD35 /* DreamView.swift */; };
 		F08B45FB2693902C001133D7 /* FullDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B45FA2693902C001133D7 /* FullDreamView.swift */; };
@@ -38,6 +39,7 @@
 		F0070C1E265651A600626EFB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F037825D2638478300779801 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F041F48E2691BC9D00455881 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		F05C69832699B9B3001AF91C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F0623FCA2637554F007C068A /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		F063BF12265ADC9000D9AD35 /* DreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamView.swift; sourceTree = "<group>"; };
 		F08B45FA2693902C001133D7 /* FullDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullDreamView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				F0BFCF27268355BD00B6CF72 /* GoogleService-Info.plist */,
 				F09AFE2926281A96002F111D /* Preview Content */,
 				F0F9C93326837BBA009B8FB4 /* DreamRepository.swift */,
+				F05C69832699B9B3001AF91C /* Launch Screen.storyboard */,
 			);
 			path = DreamCatcher;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				F09AFE2E26281A96002F111D /* LaunchScreen.storyboard in Resources */,
 				F0BFCF28268355BD00B6CF72 /* GoogleService-Info.plist in Resources */,
 				F09AFE2B26281A96002F111D /* Preview Assets.xcassets in Resources */,
+				F05C69842699B9B3001AF91C /* Launch Screen.storyboard in Resources */,
 				F09AFE2826281A96002F111D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

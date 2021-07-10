@@ -25,14 +25,6 @@ struct HomeView: View {
       .opacity(0.4)
       VStack {
         HStack {
-          HStack{
-            Text("Hello,")
-              .bold()
-            Text("\("Usernameeeeeeeeeeeeeeeeee")")
-              .foregroundColor(.appPink)
-              .fontWeight(.heavy)
-            
-          }
           Spacer()
           Button(action: {
             showSettings.toggle()
