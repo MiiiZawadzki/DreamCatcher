@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  DreamCatcher
-//
-//  Created by Michał Zawadzki on 27/04/2021.
-//
-
 import SwiftUI
 import Foundation
 

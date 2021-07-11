@@ -1,10 +1,3 @@
-//
-//  AddDreamView.swift
-//  DreamCatcher
-//
-//  Created by Michał Zawadzki on 22/06/2021.
-//
-
 import SwiftUI
 
 struct AddDreamView: View {

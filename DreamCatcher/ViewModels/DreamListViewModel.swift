@@ -1,10 +1,3 @@
-//
-//  DreamListViewModel.swift
-//  DreamCatcher
-//
-//  Created by Michał Zawadzki on 23/06/2021.
-//
-
 import Foundation
 import Combine
 

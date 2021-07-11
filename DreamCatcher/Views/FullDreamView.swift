@@ -1,10 +1,3 @@
-//
-//  FullDreamView.swift
-//  DreamCatcher
-//
-//  Created by Michał Zawadzki on 05/07/2021.
-//
-
 import SwiftUI
 
 struct FullDreamView: View {
