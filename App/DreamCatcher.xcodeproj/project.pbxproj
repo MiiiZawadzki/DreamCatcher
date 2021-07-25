@@ -20,10 +20,10 @@
 		F09AFE2626281A95002F111D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09AFE2526281A95002F111D /* LoginView.swift */; };
 		F09AFE2826281A96002F111D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09AFE2726281A96002F111D /* Assets.xcassets */; };
 		F09AFE2B26281A96002F111D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F09AFE2A26281A96002F111D /* Preview Assets.xcassets */; };
+		F09B47AE26AD7C97000D1040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F09B47AD26AD7C97000D1040 /* GoogleService-Info.plist */; };
 		F0BFCF21268327BA00B6CF72 /* DreamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFCF20268327BA00B6CF72 /* DreamModel.swift */; };
 		F0BFCF2426833F0D00B6CF72 /* DreamCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFCF2326833F0D00B6CF72 /* DreamCellViewModel.swift */; };
 		F0BFCF26268340A400B6CF72 /* DreamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BFCF25268340A400B6CF72 /* DreamListViewModel.swift */; };
-		F0BFCF28268355BD00B6CF72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0BFCF27268355BD00B6CF72 /* GoogleService-Info.plist */; };
 		F0D5057F269224ED00DB002B /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D5057E269224ED00DB002B /* UIApplicationExtension.swift */; };
 		F0E1A4EE26820C99003BFE20 /* AddDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E1A4ED26820C99003BFE20 /* AddDreamView.swift */; };
 		F0F3E76A262DD2E800A9C085 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F3E769262DD2E800A9C085 /* RegisterView.swift */; };
@@ -49,10 +49,10 @@
 		F09AFE2726281A96002F111D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F09AFE2A26281A96002F111D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F09AFE2F26281A96002F111D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F09B47AD26AD7C97000D1040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0BFCF20268327BA00B6CF72 /* DreamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamModel.swift; sourceTree = "<group>"; };
 		F0BFCF2326833F0D00B6CF72 /* DreamCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCellViewModel.swift; sourceTree = "<group>"; };
 		F0BFCF25268340A400B6CF72 /* DreamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamListViewModel.swift; sourceTree = "<group>"; };
-		F0BFCF27268355BD00B6CF72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0D5057E269224ED00DB002B /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F0E1A4ED26820C99003BFE20 /* AddDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamView.swift; sourceTree = "<group>"; };
 		F0F3E769262DD2E800A9C085 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 				F09AFE2126281A95002F111D /* AppDelegate.swift */,
 				F09AFE2326281A95002F111D /* SceneDelegate.swift */,
 				F0F3E768262DD2BE00A9C085 /* Views */,
+				F09B47AD26AD7C97000D1040 /* GoogleService-Info.plist */,
 				F09AFE2726281A96002F111D /* Assets.xcassets */,
 				F09AFE2F26281A96002F111D /* Info.plist */,
-				F0BFCF27268355BD00B6CF72 /* GoogleService-Info.plist */,
 				F09AFE2926281A96002F111D /* Preview Content */,
 				F0F9C93326837BBA009B8FB4 /* DreamRepository.swift */,
 				F05C69832699B9B3001AF91C /* Launch Screen.storyboard */,
@@ -223,8 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0BFCF28268355BD00B6CF72 /* GoogleService-Info.plist in Resources */,
 				F09AFE2B26281A96002F111D /* Preview Assets.xcassets in Resources */,
+				F09B47AE26AD7C97000D1040 /* GoogleService-Info.plist in Resources */,
 				F05C69842699B9B3001AF91C /* Launch Screen.storyboard in Resources */,
 				F09AFE2826281A96002F111D /* Assets.xcassets in Resources */,
 			);
